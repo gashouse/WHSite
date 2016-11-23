@@ -32,14 +32,14 @@
             "Gas\\": "app/Gas/"
         },
         "files": [
-			"app/gas/Utils/Cookie.php",
-			"app/gas/Utils/Data.php",
-			"app/gas/Utils/DateTime.php",
-			"app/gas/Utils/Html.php",
-			"app/gas/Utils/Http.php",
-			"app/gas/Utils/Path.php",
-			"app/gas/Utils/String.php",
-			"app/gas/Utils/Technology.php"
+			"app/Gas/Utils/Cookie.php",
+			"app/Gas/Utils/Data.php",
+			"app/Gas/Utils/DateTime.php",
+			"app/Gas/Utils/Html.php",
+			"app/Gas/Utils/Http.php",
+			"app/Gas/Utils/Path.php",
+			"app/Gas/Utils/String.php",
+			"app/Gas/Utils/Technology.php"
         ]
     },
 

@@ -10,7 +10,8 @@ Route::get('connect', 'SiteController@connect')->name('connect');
 Route::get('contact', 'SiteController@contact')->name('contact');
 
 Route::get('sandbox', function() {
-	return view('admin.templates.sandbox');
+	// return view('admin.templates.sandbox');
+	phpinfo();
 });
 
 Route::post('avatars', function() {
