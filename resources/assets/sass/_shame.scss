@@ -1,0 +1,25 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+a {
+	@include transition(all 0.15s ease-in-out);
+}
+
+// --------------------------------------------------------------------------------
+// No Outlines
+// --------------------------------------------------------------------------------
+a, input, button {
+	outline: none !important;
+}
+
+a:active, a:focus  {
+	outline: none !important;
+}
+
+input:focus, input:active {
+	outline: none !important;
+}
+
+button:active, button:focus {
+	outline: none !important;
+}

@@ -1,0 +1,42 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.connect__links {
+
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.connect__text {
+
+	p {
+		margin-bottom: 18px;
+		// @include font-sans;
+		font-family: $font-serif;
+		font-size: rem-calc(18);
+		line-height: 26px;
+		font-weight: normal; // 300, normal, 600, bold
+		color: $color-white;
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(24);
+			line-height: 30px;
+			margin-bottom: 24px;
+		}
+		@include breakpoint(large) {
+			font-size: rem-calc(42);
+			line-height: 52px;
+			margin-bottom: 42px;
+		}
+	}
+
+	a {
+		color: tint($color-gold, 0%);
+		@include transition(all 0.15s ease-in-out);
+
+		&:hover, &:active {
+			color: tint($color-gold, 25%);
+		}
+	}
+}

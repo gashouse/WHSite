@@ -1,0 +1,106 @@
+// --------------------------------------------------------------------------------
+// Nav Toggle
+// --------------------------------------------------------------------------------
+.nav__toggle {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 56px;
+	height: 56px;
+	max-height: 56px;
+	max-width: 56px;
+	padding: 16px;
+	text-align: center;
+	overflow: hidden;
+	background-color: $color-white;
+	border-bottom-right-radius: 2px;
+
+	box-shadow: 0 0 30px rgba($color-black, 0.33);
+	cursor: pointer;
+	z-index: 5;
+	@include transition(all 0.15s ease-in-out);
+	@include transition(background .9s cubic-bezier(.18,1,.21,1));
+
+	@include breakpoint(medium) {
+		width: 72px;
+		height: 72px;
+		max-height: 72px;
+		max-width: 72px;
+		padding: 24px;
+		left: 96px;
+	}
+
+	.header.toggle__active & {
+		left: 0;
+		padding: 24px 10px;
+		background-color: transparent;
+		box-shadow: 0 0 30px rgba($color-black, 0);
+
+		@include breakpoint(medium) {
+			width: 96px;
+			height: 96px;
+			max-height: 96px;
+			max-width: 96px;
+			padding: 44px 20px;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.toggle--line {
+	background-color: $color-gold;
+	height: 3px;
+	margin-bottom: 7px;
+	transition: all cubic-bezier(.18,1,.21,1) .9s;
+
+	.nav__toggle:hover &, .nav__toggle:active & {
+		width: 100% !important;
+		background-color: shade($color-gold, 33%);
+	}
+
+	// Menu Active
+	.header.toggle__active & {
+		background-color: tint($color-black, 85%);
+		height: 6px;
+		margin-bottom: 0;
+	}
+
+	.header.toggle__active:hover &, .header.toggle__active:active & {
+		background-color: tint($color-black, 0%);
+	}
+
+	&.toggle--line-first {
+		width: 50%;
+		.header.toggle__active & {
+			width: 100%;
+			margin-top: 0px;
+			@include transform(rotate(135deg));
+			@include breakpoint(medium) {
+				margin-top: 0px;
+			}
+		}
+	}
+
+	&.toggle--line-second {
+		width: 90%;
+		.header.toggle__active & {
+			width: 100%;
+			opacity: 0;
+		}
+	}
+
+	&.toggle--line-third {
+		width: 70%;
+		.header.toggle__active & {
+			width: 100%;
+			margin-top: -12px;
+			transform: rotate(-135deg);
+			@include breakpoint(medium) {
+				margin-top: -12px;
+			}
+		}
+	}
+}

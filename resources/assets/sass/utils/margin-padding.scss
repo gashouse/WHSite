@@ -1,0 +1,37 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.no-p {
+	padding: 0 !important;
+}
+
+.no-p-sm {
+	@include breakpoint(small only) {
+		padding: 0 !important;
+	}
+}
+
+.no-p-m {
+	@include breakpoint(medium) {
+		padding: 0 !important;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.no-m {
+	margin: 0 !important;
+}
+
+.no-m-sm {
+	@include breakpoint(small only) {
+		margin: 0 !important;
+	}
+}
+
+.no-m-md {
+	@include breakpoint(medium only) {
+		margin: 0 !important;
+	}
+}

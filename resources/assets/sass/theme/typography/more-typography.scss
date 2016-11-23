@@ -1,0 +1,11 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.disclaimer {
+	font-family: $font-paragraph;
+	font-size: rem-calc(14);
+	font-weight: normal;
+	font-style: italic;
+	line-height: 1.2em;
+	color: tint($color-black, 50%);
+}

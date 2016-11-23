@@ -1,0 +1,81 @@
+.footer__newsletter {
+	padding: 30px 15px;
+	@include breakpoint(medium) {
+		padding: 0 30px;
+	}
+}
+
+.footer__newsletter--title {
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: left;
+	}
+	h4 {
+		@include font-sans;
+		color: tint($color-gold, 0%);
+		font-size: rem-calc(16);
+	}
+
+	p {
+		font-family: $font-paragraph;
+		color: tint($color-black, 33%);
+	}
+}
+
+
+.footer__newsletter--input-group {
+	position: relative;
+	display: block;
+	height: 48px;
+	border: 2px solid tint($color-black, 25%);
+	background-color: tint($color-black, 5%);
+}
+
+input.footer__newsletter--email-field {
+	position: relative;
+	display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+	padding: 12px 20px;
+
+	background-color: tint($color-black, 0%);
+	font-family: $font-paragraph;
+	font-size: rem-calc(18);
+	font-weight: normal;
+	font-style: italic;
+	color: tint($color-black, 25%);
+	z-index: 2;
+	@include transition(all 0.15s ease-in-out);
+
+	&:focus, &:active {
+		background-color: tint($color-black, 5%);
+		color: tint($color-black, 75%);
+	}
+}
+
+input.footer__newsletter--submit {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: 0;
+	height: 100%;
+	padding: 12px 20px;
+
+	background-color: tint($color-black, 0%);
+	border-left: 2px solid tint($color-black, 25%);
+	border-radius: 0;
+	@include font-sans;
+	color: tint($color-black, 25%);
+	z-index: 3;
+
+	@include breakpoint(large) {
+		padding: 12px 40px;
+	}
+
+	&:hover, &:active {
+		background-color: tint($color-black, 25%);
+		color: tint($color-black, 85%);
+	}
+}

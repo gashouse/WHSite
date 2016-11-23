@@ -1,0 +1,287 @@
+// --------------------------------------------------------------------------------
+// Nav Container
+// --------------------------------------------------------------------------------
+.nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    visibility: hidden;
+    overflow-y: auto;
+    z-index: 998;
+
+    &.menu__active {
+    	visibility: visible;
+    }
+
+    a {
+    	@include transition(all 0.15s ease-in-out);
+    }
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.nav__menu {
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	padding: 0;
+	@include transition(all cubic-bezier(.18,1,.21,1) .9s);
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.menu--nav,
+.menu--details {
+	vertical-align: top;
+	text-align: left;
+	max-height: 100vh;
+    overflow-y: scroll
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.nav__menu--left {
+	position: static;
+	top: 0;
+	bottom: 0;
+	display: block;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	background-color: $color-white;
+	@include transform(translate3d(0,120%,0));
+	@include transition(all cubic-bezier(.18,1,.21,1) .9s);
+
+	.nav.menu__active & {
+		@include transform(translate3d(0,0,0));
+	}
+
+	@include breakpoint(medium) {
+		width: 45%;
+		position: absolute;
+	}
+	@include breakpoint(large) {
+		width: 38%;
+	}
+}
+
+.menu--nav {
+	padding: 60px 45px;
+	@include breakpoint(medium) {
+		padding: 75px 45px;
+	}
+	@include breakpoint(large) {
+		padding: 90px 60px;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.menu--links {
+
+	a h3.menu--category {
+		position: relative;
+		@include font-sans;
+		// font-family: $font-paragraph;
+		display: inline-block;
+		font-size: rem-calc(16);
+		margin: 0;
+		padding: 8px 0;
+
+		&.menu--div {
+			padding: 25px 0 10px;
+		}
+
+		&.menu--div:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2.375rem;
+			height: .25rem;
+			background: tint($color-black, 85%);;
+		}
+	}
+
+	ul {
+		list-style: none;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		@include font-sans;
+	}
+	ul li {
+		padding: 8px 0;
+		&:last-child {
+			padding: 10px 0 20px;
+		}
+	}
+	ul li a {
+		@include font-sans;
+		font-weight: normal;
+		color: tint($color-black, 50%);
+		&:hover, &:active {
+			color: shade($color-gold, 50%);
+		}
+	}
+}
+
+
+// --------------------------------------------------------------------------------
+// Left: Contact
+// --------------------------------------------------------------------------------
+.menu--contact {
+	padding: 60px 0 0;
+
+	.menu--address {
+		h4 {
+			@include font-sans;
+			font-size: rem-calc(16);
+			margin: 0 0 20px;
+			color: $color-gold;
+		}
+		p {
+			font-family: $font-paragraph;
+			font-size: rem-calc(16);
+		}
+		a {
+			font-style: italic;
+		}
+	}
+
+	.menu--phone-email {
+		font-family: $font-paragraph;
+		font-style: italic;
+		a {
+			font-style: normal;
+		}
+		span {
+			font-weight: bold;
+			color: tint($color-black, 85%);
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Left: Social
+// --------------------------------------------------------------------------------
+.menu--social {
+	padding: 60px 0 0;
+
+	ul {
+		display: inline-block;
+		list-style: none;
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	ul li {
+		display: inline-block;
+		float: left;
+		padding: 0 10px 0 0;
+	}
+	ul li a {
+		font-size: rem-calc(30);
+		padding: 5px 10px;
+		color: tint($color-black, 75%);
+		&:first-child {
+			padding: 5px 10px 0 0;
+		}
+
+		&:hover, &:active {
+			color: $color-gold;
+		}
+	}
+}
+
+
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.nav__menu--right {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+	right: 0;
+	width: 62%;
+	height: 100%;
+	background-color: $color-black;
+	@include transform(translate3d(0,-120%,0));
+	@include transition(all cubic-bezier(.18,1,.21,1) .9s);
+
+	.nav.menu__active & {
+		@include transform(translate3d(0,0,0));
+	}
+
+	@include breakpoint(medium) {
+		display: block;
+		width: 55%;
+	}
+	@include breakpoint(large) {
+		width: 62%;
+	}
+}
+
+.menu--content {
+	// padding: 90px 60px;
+}
+
+.menu--details {
+
+}
+
+// --------------------------------------------------------------------------------
+// Body
+// --------------------------------------------------------------------------------
+body.menu__open {
+	overflow: hidden !important;
+}
+
+// --------------------------------------------------------------------------------
+// Menu Link -- External
+// --------------------------------------------------------------------------------
+a.menu-link__external {
+
+	span.icon {
+		color: tint($color-gold, 66%);
+		@include transition(all 0.15s ease-in-out);
+	}
+
+	&:hover span.icon, &:active span.icon {
+		color: shade($color-gold, 0%);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Menu Link -- Note
+// --------------------------------------------------------------------------------
+
+.menu--links ul li.menu-link__with-note {
+	padding: 10px 0 0;
+	line-height: 20px;
+}
+
+.menu--links ul li.menu-link__note {
+	padding: 0 0 10px;
+	font-family: $font-paragraph;
+	font-size: rem-calc(12);
+	line-height: 12px;
+	text-transform: none;
+	font-style: italic;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	color: tint($color-gold, 20%);
+}

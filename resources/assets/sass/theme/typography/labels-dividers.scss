@@ -1,0 +1,50 @@
+// --------------------------------------------------------------------------------
+// Settings
+// --------------------------------------------------------------------------------
+$label-font-size: rem-calc(12);
+
+// --------------------------------------------------------------------------------
+// Form Labels
+// --------------------------------------------------------------------------------
+label {
+	@include font-sans;
+	font-size: rem-calc(12);
+}
+
+// --------------------------------------------------------------------------------
+// Underline: As seen in home page details
+// --------------------------------------------------------------------------------
+.label__underline {
+	@include font-sans;
+	position: relative;
+	color: $color-gold;
+	padding-bottom: rem-calc(30);
+	font-size: rem-calc(13);
+
+	@include breakpoint(medium) {
+		padding-bottom: rem-calc(20);
+		font-size: rem-calc(16);
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		bottom: rem-calc(15);
+		left: 0;
+		right: 0;
+		display: block;
+		background: tint($color-black, 85%);
+		height: 2px;
+		width: 30px;
+	}
+}
+
+.label__tag {
+	display: inline-block;
+	padding: rem-calc(6) rem-calc(10);
+	color: $color-white;
+	@include font-sans;
+	font-size: rem-calc(10);
+	font-weight: normal;
+	background-color: $color-gold;
+}

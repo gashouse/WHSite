@@ -1,0 +1,68 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea,
+select {
+	background-color: rgba(0,0,0,0);
+	outline: none !important;
+	// border-bottom: 2px solid $color-black !important;
+	// border: 2px solid tint($color-black, 50%);
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+[type='text'].bordered,
+[type='password'].bordered,
+[type='date'].bordered,
+[type='datetime'].bordered,
+[type='datetime-local'].bordered,
+[type='month'].bordered,
+[type='week'].bordered,
+[type='email'].bordered,
+[type='number'].bordered,
+[type='search'].bordered,
+[type='tel'].bordered,
+[type='time'].bordered,
+[type='url'].bordered,
+[type='color'].bordered,
+textarea.bordered,
+select.bordered {
+	border: 2px solid tint($color-black, 50%);
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+[type='text'].bordered--bottom,
+[type='password'].bordered--bottom,
+[type='date'].bordered--bottom,
+[type='datetime'].bordered--bottom,
+[type='datetime-local'].bordered--bottom,
+[type='month'].bordered--bottom,
+[type='week'].bordered--bottom,
+[type='email'].bordered--bottom,
+[type='number'].bordered--bottom,
+[type='search'].bordered--bottom,
+[type='tel'].bordered--bottom,
+[type='time'].bordered--bottom,
+[type='url'].bordered--bottom,
+[type='color'].bordered--bottom,
+textarea.bordered--bottom,
+select.bordered--bottom {
+	border-bottom: 2px solid tint($color-black, 50%);
+}

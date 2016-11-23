@@ -1,0 +1,84 @@
+// ---------------------------------------------------------------------------------
+// Typography
+// ----------
+// normal, bold, bolder, lighter
+// ... Extra Thin
+// 100 - Thin, Hairline
+// 200 - Extra Light, Ultra Light
+// 300 - Light
+// 400 - Normal, Book, Regular, Roman
+// 500 - Medium
+// 600 - Semi-Bold, Demi-Bold
+// 700 - Bold
+// 800 - Extra Bold, Ultra Bold
+// 900 - Black, Heavy
+// ... Ultra Black
+
+	// Serif Paragraph
+	// @include load-font('Libre Baskerville', 'libre-baskerville', 'LibreBaskerville-Regular', false, normal);
+	// @include load-font('Libre Baskerville', 'libre-baskerville', 'LibreBaskerville-Italic',  false, normal, italic);
+	// @include load-font('Libre Baskerville', 'libre-baskerville', 'LibreBaskerville-Bold',    false, bold);
+	// $font-librebaskerville: 'Libre Baskerville', Cambria, Georgia, serif;
+	// $font-paragraph: $font-librebaskerville;
+
+	@include load-font('Chaparral', 'chaparral', 'chaparral-light',            false, normal);
+	@include load-font('Chaparral', 'chaparral', 'chaparral-light-italic',     false, normal, italic);
+	@include load-font('Chaparral', 'chaparral', 'chaparral-regular',          false, bold);
+	@include load-font('Chaparral', 'chaparral', 'chaparral-italic',           false, bold, italic);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-semi-bold',        false, 600);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-semi-bold-italic', false, 600, italic);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-bold',             false, bold);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-bold-italic', 	   false, bold, italic);
+
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-light',            false, 300);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-light-italic',     false, 300, italic);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-regular',          false, normal);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-italic',           false, normal, italic);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-semi-bold',        false, 600);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-semi-bold-italic', false, 600, italic);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-bold',             false, bold);
+	// @include load-font('Chaparral', 'chaparral', 'chaparral-bold-italic', 	   false, bold, italic);
+	$font-chaparral: 'Chaparral', Cambria, Georgia, serif;
+	$font-paragraph: $font-chaparral;
+
+	// Serif
+	// @include load-font('Freight', 'freight', 'freight-light',            false, normal);
+	// @include load-font('Freight', 'freight', 'freight-light-italic',     false, normal, italic);
+	// @include load-font('Freight', 'freight', 'freight-book',             false, normal);
+	// @include load-font('Freight', 'freight', 'freight-book-italic',      false, normal, italic);
+	// @include load-font('Freight', 'freight', 'freight-medium',           false, bold);
+	// @include load-font('Freight', 'freight', 'freight-medium-italic',    false, bold, italic);
+	// @include load-font('Freight', 'freight', 'freight-bold',             false, bold);
+	// @include load-font('Freight', 'freight', 'freight-bold-italic', 	 false, bold, italic);
+
+	// @include load-font('Freight', 'freight', 'freight-light',            false, 300);
+	// @include load-font('Freight', 'freight', 'freight-light-italic',     false, 300, italic);
+	@include load-font('Freight', 'freight', 'freight-book',             false, normal);
+	@include load-font('Freight', 'freight', 'freight-book-italic',      false, normal, italic);
+	// @include load-font('Freight', 'freight', 'freight-medium',           false, 500);
+	// @include load-font('Freight', 'freight', 'freight-medium-italic',    false, 500, italic);
+	@include load-font('Freight', 'freight', 'freight-bold',             false, bold);
+	@include load-font('Freight', 'freight', 'freight-bold-italic', 	 false, bold, italic);
+	// @include load-font('Freight', 'freight', 'freight-black',            false, 900);
+	// @include load-font('Freight', 'freight', 'freight-black-italic',     false, 900, italic);
+	$font-freight: 'Freight', Cambria, Georgia, serif;
+	// $font-paragraph: $font-freight;
+	$font-serif: $font-freight;
+
+	// Brandon Grotesque
+	// @mixin load-font($font-family, $font-folder, $font-file, $woff2:false, $weight: normal,$style: normal)
+	// @include load-font('Brandon', 'brandon', 'brandon-thin',    true, 100);
+	// @include load-font('Brandon', 'brandon', 'brandon-light',   true, 300);
+	@include load-font('Brandon', 'brandon', 'brandon-regular', true, normal);
+	// @include load-font('Brandon', 'brandon', 'brandon-medium',  true, 500);
+	@include load-font('Brandon', 'brandon', 'brandon-bold',    true, bold);
+	// @include load-font('Brandon', 'brandon', 'brandon-black',   true, 900);
+	$font-brandon: 'Brandon', "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+	$font-sans: $font-brandon;
+
+	@mixin font-sans($weight: bold) {
+		font-family: $font-sans;
+		font-weight: $weight;
+		text-transform: uppercase;
+		letter-spacing: 0.14em;
+	}

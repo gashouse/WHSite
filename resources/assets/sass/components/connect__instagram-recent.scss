@@ -1,0 +1,307 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__recent {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 0 0 rem-calc(30);
+	background-color: $color-black;
+
+	@include breakpoint(medium) {
+		padding: 0 0 rem-calc(60);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Slider Wrapper
+// --------------------------------------------------------------------------------
+.instagram__post--wrapper {
+	@include transition(all 0.3s ease-in-out);
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__post {
+	float: left;
+	width: 100%;
+	position: relative;
+	opacity: 0;
+	@include transition(all 0.3s ease-in-out);
+	&.post__active {
+		opacity: 1;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__card {
+	background-color: $color-white;
+	max-width: 340px;
+	border-radius: 2px;
+
+	.columns {
+		padding: 0;
+	}
+
+	@include breakpoint(medium) {
+		max-width: 640px;
+	}
+	@include breakpoint(large) {
+		max-width: 935px;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__photo {
+	padding: 0;
+
+	img {
+		width: 100%;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__details {
+	position: relative;
+	padding: rem-calc(80) rem-calc(30) rem-calc(30);
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__meta {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: rem-calc(20) rem-calc(30) rem-calc(20);
+	border-bottom: 1px solid tint($color-light-gray, 50%);
+
+}
+
+.instagram__likes, .instagram__timeago {
+	display: inline-block;
+	width: 50%;
+	float: left;
+	@include font-sans;
+	font-size: rem-calc(12);
+}
+
+.instagram__likes {
+	color: tint($color-black, 50%);
+
+	span.icon-heart {
+		margin-right: 5px;
+		font-size: rem-calc(10px);
+		// color: tint($color-black, 75%);
+		color: tint($color-gold, 50%);
+	}
+}
+
+.instagram__timeago {
+	text-align: right;
+
+	a {
+
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__text--wrapper {
+	position: static;
+	display: block;
+	width: 100%;
+	left: 0;
+	padding: 0;
+
+	@include breakpoint(large) {
+		position: absolute;
+		top: 80px;
+		overflow-y: scroll;
+		padding: 0 rem-calc(30);
+
+		&.with-scroll {
+			border-bottom: 1px solid tint($color-light-gray, 50%);
+		}
+	}
+}
+
+.instagram__text {
+	font-family: $font-paragraph;
+	font-size: rem-calc(15);
+	line-height: 1.4em;
+	padding: 0;
+
+	@include breakpoint(large) {
+		padding: 0 0 rem-calc(15);
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__controls {
+	position: absolute;
+	display: block;
+	top: 0;
+	height: 100%;
+	width: 60px;
+	font-size: rem-calc(48);
+
+	a {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		line-height: 1;
+		color: tint($color-black, 25%);
+		background-color: transparent;
+
+		@include transition(all 0.15s ease-in-out);
+		&:hover, &:active {
+			color: $color-gold;
+			background-color: rgba($color-black, 0.33);
+			@include breakpoint(medium) {
+				background-color: tint($color-black, 3%);
+			}
+		}
+	}
+
+	a span {
+		position: absolute;
+		top: 50%;
+		left: 6px;
+		@include transform(translateY(-50%));
+	}
+}
+
+.instagram__prev {
+	left: 0;
+
+	a {
+
+	}
+}
+
+.instagram__next {
+	right: 0;
+
+	a {
+
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Instagram: Thumbnails
+// --------------------------------------------------------------------------------
+.instagram__thumbnails {
+	position: relative;
+	display: none;
+	width: 100%;
+	background-color: $color-black;
+	@include breakpoint(medium) {
+		display: block;
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Thumbnail
+// --------------------------------------------------------------------------------
+.instagram__thumbnail {
+	position: relative;
+	display: block;
+	float: left;
+	width: 25%;
+	overflow: hidden;
+	opacity: 0.15;
+	@include transition(all 0.15s ease-in-out);
+	@include breakpoint(medium) {
+		width: 12.5%;
+	}
+	&:hover, &:active {
+		opacity: 1.0;
+	}
+
+	a {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	a .thumb__overlay {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		z-index: 1;
+		opacity: 0;
+		blend-mode: multiply;
+		@include transition(all 0.15s ease-in-out);
+	}
+
+	img {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		max-width: none !important;
+		z-index: 0;
+		@include filter(grayscale(80%));
+		// @include transition(all 0.15s ease-in-out);
+	}
+	&:hover img, &:active img {
+		@include filter(grayscale(0%));
+	}
+
+	&.thumbnail__active {
+		opacity: 1.0;
+
+		a {
+
+		}
+
+		a .thumb__overlay {
+			opacity: 1;
+			background-color: rgba(mix($color-gold, $color-black, 75%), 0.33);
+		}
+
+	}
+
+	// a:hover img {
+	// 	@include transform(scale(1.2));
+	// }
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.instagram__thumbnail img {
+
+	&.thumb__landscape {
+		left: 50%;
+		@include transform(translateX(-50%));
+	}
+	&.thumb__portrait {
+		top: 50%;
+		@include transform(translateY(-50%));
+	}
+	&.thumb__square {}
+}

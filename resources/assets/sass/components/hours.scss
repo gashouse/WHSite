@@ -1,0 +1,188 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.hours__label {
+	font-size: rem-calc(14);
+	@include breakpoint(medium) {
+		font-size: rem-calc(16);
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.hours__vertical {
+
+	.hours__row {
+		padding-top: rem-calc(10);
+		padding-bottom: rem-calc(10);
+		line-height: rem-calc(25);
+		text-align: center;
+		margin: 0;
+		@include breakpoint(medium) {
+			text-align: left;
+		}
+		@include breakpoint(large) {
+			padding-top: rem-calc(5);
+			padding-bottom: rem-calc(5);
+			line-height: rem-calc(40);
+			// text-align: left;
+		}
+
+		&.hours__active {
+			background-color: tint($color-gold, 85%);
+		}
+	}
+
+	.hours__day, .hours__day-abbr {
+		@include font-sans;
+		font-size: rem-calc(14);
+		font-weight: normal;
+		color: tint($color-gold, 25%);
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(18);
+		}
+	}
+
+	.hours__day {
+
+	}
+
+	.hours__day-abbr {
+
+	}
+
+	.hours__row.hours__active {
+
+		.hours__day, .hours__day-abbr {
+			font-weight: bold;
+			color: shade($color-gold, 25%);
+		}
+	}
+
+}
+
+.hours__open-to-close {
+	font-family: $font-paragraph;
+	font-size: rem-calc(14);
+	color: tint($color-black, 50%);
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(18);
+	}
+
+	sup {
+		font-size: rem-calc(9);
+		padding-left: 0;
+	}
+
+	span {
+		font-style: italic;
+		padding: 0 rem-calc(3);
+	}
+
+}
+
+.hours__row.hours__active .hours__open-to-close {
+	color: $color-black;
+}
+
+// --------------------------------------------------------------------------------
+// Disclaimer
+// --------------------------------------------------------------------------------
+.hours__disclaimer--xs-sm {
+	border-top: 2px solid tint($color-black, 85%);
+	border-bottom: 2px solid tint($color-black, 85%);
+}
+
+.hours__disclaimer--container-md-lg {
+	border-top: 2px solid tint($color-black, 85%);
+	// border-bottom: 2px solid tint($color-black, 85%);
+}
+
+.hours__disclaimer {
+	text-align: center;
+	padding: rem-calc(30);
+	@include breakpoint(large) {
+		padding: rem-calc(45);
+	}
+}
+
+.hours__disclaimer--xs-sm {
+
+}
+
+.hours__disclaimer--md-lg {
+	border-top: 2px solid tint($color-black, 85%);
+}
+
+// --------------------------------------------------------------------------------
+// View All Hours (Mobile)
+// --------------------------------------------------------------------------------
+.todays-hours__label {
+	@include font-sans;
+	font-size: rem-calc(16);
+	color: tint($color-gold, 25%);
+	text-align: center;
+}
+
+.details__block--view-all {
+
+}
+
+.details__block--view-all-link {
+	text-align: center;
+
+	a {
+		position: relative;
+		padding: 5px 16px;
+		font-family: $font-paragraph;
+		font-size: rem-calc(14);
+		color: tint($color-gold, 25%);
+		font-style: italic;
+		@include transition(all 0.15s ease-in-out);
+
+		&:hover, &:active {
+			color: shade($color-gold, 25%);
+		}
+
+		span.icon {
+			position: absolute;
+			top: 1px;
+			left: 0;
+			font-size: rem-calc(16);
+			@include transition(all 0.15s ease-in-out);
+		}
+	}
+
+	a:hover span.icon {
+		top: 3px;
+	}
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+
+span.hours__view-all, span.hours__view-less {
+	display: none;
+}
+
+.details__block--todays-hours.todays-hours__view-more {
+		span.hours__view-all {
+			display: inline;
+		}
+		span.hours__view-less {
+			display: none;
+		}
+}
+
+.details__block--todays-hours.todays-hours__view-less {
+	span.hours__view-all {
+			display: none;
+		}
+	span.hours__view-less {
+		display: inline;
+	}
+}

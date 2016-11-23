@@ -1,0 +1,296 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.booking {
+	background-color: mix($color-black, $color-white, 10%);
+	padding: rem-calc(60) rem-calc(16);
+	@include breakpoint(medium) {
+		padding: rem-calc(90) rem-calc(30);
+	}
+	@include breakpoint(large) {
+		padding: rem-calc(180) rem-calc(30);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// TITLE
+// --------------------------------------------------------------------------------
+.booking__title {
+	h3 {
+		margin: 0 0 60px;
+		font-family: $font-serif;
+		font-size: rem-calc(36);
+		line-height: rem-calc(36);
+		font-weight: normal;
+		color: tint($color-gold, 0%);
+
+		@include breakpoint(medium) {
+			margin: 0 0 90px;
+			font-size: rem-calc(64);
+			line-height: rem-calc(64);
+		}
+		@include breakpoint(large) {
+			margin: 0 0 180px;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+// LABEL
+// --------------------------------------------------------------------------------
+.label__underline.booking__label {
+	margin: 0;
+	color: tint($color-black, 0%);
+
+	&:after {
+		background-color: tint($color-black, 75%);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// TABS
+// --------------------------------------------------------------------------------
+ul.booking__tabs--list {
+
+	li {
+		border-right: 5px solid tint($color-black, 75%);
+		border-left: 1px solid tint($color-black, 75%);
+		border-bottom: 1px solid tint($color-black, 75%);
+	}
+	li.booking__tab--reservations {
+		border-top: 1px solid tint($color-black, 75%);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// TAB LINKS
+// --------------------------------------------------------------------------------
+ul.booking__tabs--list li {
+
+	a {
+		position: relative;
+		@include font-sans(normal);
+		font-size: rem-calc(14);
+		color: $color-black;
+		padding: 16px 16px 10px;
+		@include transition(all 0.15s ease-in-out);
+
+		&:hover, &:active {
+			background-color: tint($color-white, 0%);
+			color: $color-gold;
+		}
+		@include breakpoint(medium) {
+			padding: 25px 16px 20px;
+		}
+	}
+
+	a span.booking__note {
+		font-family: $font-serif;
+		font-size: rem-calc(12);
+		font-style: italic;
+		text-transform: none;
+		color: $color-gold;
+		letter-spacing: 0.1em;
+		line-height: 18px;
+	}
+
+	a span.icon {
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		@include transform(translateY(-50%));
+		font-size: rem-calc(18);
+		color: tint($color-black, 75%);
+		@include transition(all 0.15s ease-in-out);
+		@include breakpoint(medium) {
+			font-size: rem-calc(24);
+		}
+	}
+
+	a:hover span.icon,
+	a:active span.icon {
+		color: tint($color-gold, 0%);
+	}
+
+}
+
+// ACTIVE
+// --------------
+ul.booking__tabs--list li.booking__tab--active {
+	border-right: 5px solid tint($color-gold, 0%);
+
+	a {
+		background-color: tint($color-white, 0%);
+	}
+
+	a span.icon {
+		color: tint($color-gold, 0%);
+	}
+}
+
+
+// --------------------------------------------------------------------------------
+// CONTENT
+// --------------------------------------------------------------------------------
+.booking__content {
+	position: relative;
+	background-color: $color-white;
+	min-height: 640px;
+	overflow: hidden;
+	@include transition(all 0.3s ease-in-out);
+	@include breakpoint(medium) {
+		min-height: 540px;
+	}
+}
+.booking__content--block {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 30px;
+	visibility: hidden;
+	opacity: 0;
+	@include transform(translateX(-150%));
+	@include transition(opacity 0.3s ease-in-out 0.15s, transform 0.3s ease-in-out);
+
+	@include breakpoint(medium) {
+		padding: 30px;
+	}
+	@include breakpoint(large) {
+		padding: 60px;
+	}
+}
+.booking__content--block.booking__active {
+	visibility: visible;
+	opacity: 1;
+	@include transform(translateX(0%));
+}
+
+// --------------------------------------------------------------------------------
+// DESCRIPTION
+// --------------------------------------------------------------------------------
+.booking__description {
+	padding: 0 0 30px;
+
+	p {
+		margin: 0;
+		font-size: rem-calc(18);
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(24);
+		}
+	}
+
+}
+
+// --------------------------------------------------------------------------------
+// FORM
+// --------------------------------------------------------------------------------
+.booking__form {
+	padding: 30px 0 0;
+	border-top: 2px solid tint($color-black, 90%);
+}
+
+
+// --------------------------------------------------------------------------------
+// RESERVATIONS, BOOKME
+// --------------------------------------------------------------------------------
+.booking__seatme--submit {
+	text-align: center;
+	padding: 0 0 30px;
+
+	button.button__seatme {
+		@include font-sans;
+		margin: 0;
+		padding: 16px 30px;
+	}
+}
+
+.booking__seatme--description {
+	text-align: right;
+
+	p {
+		margin: 0 0 10px;
+		font-style: italic;
+		font-size: rem-calc(12);
+		color: tint($color-black, 66%);
+		@include breakpoint(medium) {
+			margin: 0;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+// EMAIL, CALL OPTION
+// --------------------------------------------------------------------------------
+.booking__call, .booking__email {
+	padding: 30px 0;
+	margin: 0;
+	border-top: 2px solid tint($color-black, 90%);
+	border-left: none;
+}
+
+.booking__email,
+.booking__call {
+	text-align: center;
+
+	p {
+		@include font-sans(normal);
+		margin: 0 0 5px;
+		color: tint($color-black, 50%);
+	}
+	a {
+		position: relative;
+		padding: 0 20px;
+		font-family: $font-paragraph;
+		font-size: rem-calc(18);
+		font-weight: bold;
+		color: tint($color-black, 0%);
+		@include transition(all 0.15s ease-in-out);
+
+		&:hover, &:active {
+			color: tint($color-gold, 0%);
+		}
+
+		@include breakpoint(large) {
+			font-size: rem-calc(24);
+		}
+
+		span.icon {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			font-size: rem-calc(16);
+			color: tint($color-gold, 50%);
+			@include transform(translateY(-50%));
+			@include transition(all 0.15s ease-in-out);
+		}
+
+		&:hover span.icon, &:active span.icon {
+			color: tint($color-gold, 0%);
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Form Styles
+// --------------------------------------------------------------------------------
+.booking__label {
+	color: tint($color-black, 50%);
+}
+
+.booking__input {
+	border-bottom: 2px solid tint($color-gold, 50%);
+	font-size: rem-calc(18);
+	font-weight: bold;
+	background-image: none;
+	margin-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+
+	@include breakpoint(large) {
+		margin-bottom: 5px;
+		font-size: rem-calc(20);
+	}
+}

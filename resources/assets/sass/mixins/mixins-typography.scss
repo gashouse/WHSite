@@ -1,0 +1,37 @@
+// ---------------------------------------------------------------------------------
+// WEB-FONTS
+// ---------------------------------------------------------------------------------
+@mixin load-font($font-family, $font-folder, $font-file, $woff2:false, $weight: normal,$style: normal) {
+
+	@if $woff2 == true {
+		@font-face {
+			font-family: $font-family;
+			src: url("fonts/" + $font-folder + "/" + $font-file + ".eot");
+			src: url("fonts/" + $font-folder + "/" + $font-file + ".eot?#iefix") format('embedded-opentype'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".woff2") format('woff2'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".woff") format('woff'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".ttf") format('truetype'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".svg#" + $font-file) format('svg');
+			font-weight: $weight;
+			font-style: $style;
+		}
+	} @else {
+		@font-face {
+			font-family: $font-family;
+			src: url("fonts/" + $font-folder + "/" + $font-file + ".eot");
+			src: url("fonts/" + $font-folder + "/" + $font-file + ".eot?#iefix") format('embedded-opentype'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".woff") format('woff'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".ttf") format('truetype'),
+				 url("fonts/" + $font-folder + "/" + $font-file + ".svg#" + $font-file) format('svg');
+			font-weight: $weight;
+			font-style: $style;
+		}
+	}
+
+}
+
+@mixin font-size($size) {
+  font-size: $size + px;
+  font-size: rem-calc($size);
+  // font-size: ($size / 16px) * 1rem;
+}

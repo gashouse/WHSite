@@ -1,0 +1,20 @@
+{
+    "name": "gashouse",
+    "version": "1.0.0",
+
+    "dependencies": {
+        "foundation-sites": "~6.2.4",
+		"jquery": "~2.2.0",
+    	"what-input": "~2.0.0",
+    	"waypoints": "~4.0.1",
+    	"jquery-smooth-scroll": "~2.0.1",
+    	"pikaday": "~1.5.1"
+    },
+
+    "devDependencies": {
+
+    },
+
+    "private": true
+
+}

@@ -1,0 +1,38 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+$button-font-size: rem-calc(14);
+$button-font-size-xs: rem-calc(12);
+$button-font-size-sm: rem-calc(12);
+$button-padding: rem-calc(10) rem-calc(20);
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.button {
+	@include transition(all 0.15s ease-in-out);
+}
+
+.button.button-white-ghost {
+	@include font-sans;
+	padding: $button-padding;
+	font-size: $button-font-size-xs;
+	color: $color-black;
+	background-color: $color-white;
+	border: 2px solid $color-white;
+	margin: 0;
+
+	&:hover, &:active {
+		background-color: transparent;
+		color: $color-white;
+	}
+
+	@include breakpoint(small only) {
+		font-size: $button-font-size-sm;
+	}
+
+	@include breakpoint(medium up) {
+		font-size: $button-font-size;
+	}
+
+}

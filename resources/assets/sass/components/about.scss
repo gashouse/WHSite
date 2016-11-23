@@ -1,0 +1,153 @@
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+
+.details {
+	// padding-top: rem-calc(30);
+}
+
+.label__tag.label__about {
+	background-color: tint($color-black, 90%);
+	color: $color-black;
+}
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.details__bar {
+	padding: rem-calc(30) rem-calc(15);
+	text-align: center;
+	border-bottom: 2px solid tint($color-black,85%);
+
+	@include breakpoint(medium) {
+		padding: rem-calc(30) rem-calc(15);
+	}
+	@include breakpoint(large) {
+		padding: rem-calc(45) rem-calc(15);
+	}
+}
+
+.details__address {
+
+	h3 {
+		@include font-sans;
+		font-weight: normal;
+		color: $color-black;
+		margin: 0;
+		font-size: rem-calc(20);
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(28);
+		}
+	}
+}
+
+.details__map-phone {
+	text-align: center;
+	line-height: 1;
+	padding-top: rem-calc(10);
+	padding-bottom: rem-calc(10);
+	font-family: $font-paragraph;
+	font-size: rem-calc(18);
+	font-style: italic;
+
+	a {
+		margin: 0;
+	}
+
+	a span.icon {
+		margin-right: 5px;
+	}
+
+	span.icon-circle {
+		font-size: rem-calc(4) !important;
+		color: tint($color-black, 85%);
+		margin: 0 10px;
+	}
+
+	span.details__phone {
+		color: tint($color-black, 50%);
+	}
+
+}
+
+
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.details__block {
+	padding: 0;
+}
+
+.details__block--all-hours {
+	display: none;
+	&.all-hours__open {
+		display: block;
+	}
+	@include breakpoint(medium) {
+		display: block;
+	}
+}
+
+.details__block--hours {
+	padding: rem-calc(30) rem-calc(15);
+
+	@include breakpoint(medium) {
+		padding: rem-calc(30);
+	}
+	@include breakpoint(large) {
+		padding: rem-calc(45);
+	}
+}
+
+.details__block--todays-hours {
+	border-bottom: none;
+
+	&.todays-hours__view-less {
+		border-bottom: 2px solid tint($color-black, 85%);
+	}
+
+}
+
+.details__block--hours-bar {
+	border-right: 2px solid tint($color-black, 85%);
+}
+
+.details__block--hours-kitchen {
+	border-right: none;
+	@include breakpoint(large) {
+		border-right: 2px solid tint($color-black, 85%);
+	}
+}
+
+.details__block--about {
+	padding: rem-calc(30);
+
+	@include breakpoint(large) {
+		padding: rem-calc(45) rem-calc(45) 0;
+	}
+}
+
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+
+
+// --------------------------------------------------------------------------------
+//
+// --------------------------------------------------------------------------------
+.details__about {
+
+	p {
+		font-family: $font-paragraph;
+		font-size: rem-calc(16);
+		line-height: rem-calc(24);
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(18);
+			line-height: rem-calc(28);
+		}
+	}
+}

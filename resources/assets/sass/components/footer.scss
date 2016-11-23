@@ -1,0 +1,212 @@
+// --------------------------------------------------------------------------------
+// Containers
+// --------------------------------------------------------------------------------
+.footer {
+	position: relative;
+	display: block;
+	width: 100%;
+	background: $color-black;
+}
+
+.footer__links {
+	padding: rem-calc(90) 0;
+}
+
+// --------------------------------------------------------------------------------
+// Logo
+// --------------------------------------------------------------------------------
+.footer__logo {
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: right !important;
+	}
+
+	a {
+		font-size: rem-calc(72);
+		color: $color-white;
+		color: tint($color-black, 5%);
+		@include transition(all 0.15s ease-in-out);
+
+		&:hover, &:active {
+			color: $color-gold;
+		}
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Links
+// --------------------------------------------------------------------------------
+.footer__block {
+	text-align: center;
+	@include breakpoint(large) {
+		text-align: left;
+	}
+
+	a.footer__title {
+		display: block;
+		margin-bottom: 8px;
+		@include font-sans;
+		color: $color-gold;
+		&:hover, &:active {
+			color: mix($color-gold, $color-black, 75%);
+		}
+	}
+
+	a {
+		display: block;
+		margin-left: 0;
+		padding: 3px 0;
+		font-family: $font-sans;
+		line-height: rem-calc(24);
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: tint($color-black, 33%);
+		@include transition(all 0.15s ease-in-out);
+		&:hover, &:active {
+			color: mix($color-gold, $color-black, 75%);
+		}
+	}
+	a span.icon {
+		color: tint($color-black, 5%);
+		@include transition(all 0.15s ease-in-out);
+	}
+	a:hover span.icon, a:active span.icon {
+		color: mix($color-gold, $color-black, 75%);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Address
+// --------------------------------------------------------------------------------
+.footer__block.footer__block--address {
+	text-align: center;
+	@include breakpoint(medium) {
+		text-align: left !important;
+	}
+	@include breakpoint(medium only) {
+		padding-bottom: rem-calc(60);
+	}
+
+	h4 {
+		@include font-sans;
+		color: tint($color-gold, 0%);
+		font-size: rem-calc(16);
+	}
+
+	p.footer__address, p.footer__phone {
+		margin: 0;
+		padding: 3px 0;
+		font-family: $font-sans;
+		letter-spacing: 0.14em;
+		line-height: rem-calc(24);
+		text-transform: uppercase;
+		color: tint($color-black, 75%);
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Social
+// --------------------------------------------------------------------------------
+ul.footer__social {
+	list-style: none;
+	list-style-type: none;
+	padding: 20px 0 0;
+	margin: 15px 0 0;
+	border-top: 2px solid tint($color-black, 3%);
+
+	li {
+		display: inline-block;
+		padding-right: 10px;
+		@include breakpoint(large) {
+			float: left;
+		}
+
+		&.footer__social--instagram,
+		&.footer__social--facebook,
+		&.footer__social--twitter {
+
+		}
+
+		&.footer__social--instagram {}
+		&.footer__social--facebook {}
+		&.footer__social--twitter {}
+	}
+
+	li a {
+		margin: 0 !important;
+		font-size: rem-calc(24);
+		&:hover, &:active {
+			margin: 0 !important;
+		}
+	}
+
+	li a span.icon {
+
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Legal
+// --------------------------------------------------------------------------------
+.footer__legal {
+	padding: 40px 0;
+	@include font-sans;
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	color: tint($color-black, 20%);
+
+	a {
+		color: tint($color-black, 5%);
+		padding-left: 10px;
+	}
+}
+
+// --------------------------------------------------------------------------------
+// Back to Top
+// --------------------------------------------------------------------------------
+.to-top__container {
+	padding-top: rem-calc(60);
+}
+
+.back-to-top {
+	position: relative;
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100px;
+	text-align: right;
+	text-align: center;
+}
+
+a.to-top__link {
+
+}
+
+.to-top__icon {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 50%;
+	width: 32px;
+	height: 32px;
+	@include transform(translateX(-50%));
+	font-size: rem-calc(32);
+
+	span {
+
+	}
+}
+
+.to-top__text {
+	display: block;
+	width: 100px;
+	@include font-sans;
+	font-size: rem-calc(11);
+	padding: rem-calc(45px) 0 0 0;
+}
+
+// --------------------------------------------------------------------------------
+// Import Partials
+// --------------------------------------------------------------------------------
+@import "footer__newsletter";
